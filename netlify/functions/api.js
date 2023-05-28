@@ -7,6 +7,6 @@ export async function handler(event, context) {
   router.get('/', (req, res) => res.send('api'));
   router.get('/hello', (req, res) => res.send('Hello World!'));
   router.get('/wallet', (req, res) => res.send('wallet'));
-  api.use('/', router);
+  api.use('/.netlify/functions/api', router);
   return serverless(api)(event, context);
 }
